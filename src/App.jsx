@@ -1,6 +1,6 @@
 // src/App.jsx
 import './App.css';
-import WeatherForecast from './components/WeatherForecast/WeatherForecast.jsx'
+import WeatherForecastList from './components/WeatherForecast/WeatherForecast.jsx'
 
 const weatherForecasts = [
   {
@@ -46,12 +46,9 @@ const App = () => {
     <>
       <h1>Local Weather</h1>
       <section>
-        <div className="weather">
-          <h2>Day of the Week</h2>
-          <img src="" alt="" />
-          <p><span>conditions: </span>current weather conditions</p>
-          <p><span>time: </span>time of day</p>
-        </div>
+        {weatherForecasts.map((weatherForecast) => (
+          <WeatherForecastList key ={weatherForecast.id} {...weatherForecast} />
+        ))}
       </section>
     </>
 
